@@ -1,0 +1,22 @@
+@{
+  Layout = "_Layout";
+}
+
+@model Factory.Models.Machine
+
+<h2>Add new machine to registry</h2>
+
+<div class="margin">
+  @using (Html.BeginForm())
+  {
+    @Html.LabelFor(model => model.ModelName)
+    @Html.TextBoxFor(model => model.ModelName)
+
+    @Html.LabelFor(model => model.ModelNumber)
+    @Html.TextBoxFor(model => model.ModelNumber)
+
+    @Html.LabelFor(model => model.MaintenanceStatus)
+    @Html.TextBoxFor(model => model.MaintenanceStatus)
+    <input type="submit" value="Add new machine"/>
+  }
+</div>

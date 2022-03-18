@@ -22,5 +22,17 @@ namespace Factory.Controllers
       return View(model);
     }
 
+    public ActionResult Create()
+    {
+      return View();
+    }
+
+    [HttpPost]
+    public ActionResult Create(Machine machine)
+    {
+      _db.Machines.Add(machine);
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
   }
 }
