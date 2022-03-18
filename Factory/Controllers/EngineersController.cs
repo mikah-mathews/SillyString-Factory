@@ -19,8 +19,21 @@ namespace Factory.Controllers
 
     public ActionResult Index()
     {
-      List<Engineer> query = _db.Engineers.OrderBy(engineer => engineer.FirstName).ToList();
+      List<Engineer> query = _db.Engineers.OrderBy(engineer => engineer.FullName).ToList();
       return View(query);
+    }
+
+    public ActionResult Create()
+    {
+      return View();
+    }
+
+    [HttpPost]
+    public ActionResult Create(Engineer engineer)
+    {
+      _db.Engineers.Add(engineer);
+      _db.SaveChanges();
+      return RedirectToAction("Index");
     }
   }
 }
