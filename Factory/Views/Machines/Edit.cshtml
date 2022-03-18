@@ -1,0 +1,27 @@
+@{
+  Layout = "_Layout";
+}
+
+@model Factory.Models.Machine
+
+<h2>Edit Machine</h2>
+
+<div class="margin">
+  <h4>Edit this machine @Html.DisplayFor(model => model.ModelName)</h4>
+  @using (Html.BeginForm())
+  {
+    @Html.HiddenFor(model => model.MachineId)
+
+    @Html.LabelFor(model => model.ModelName)
+    @Html.TextBoxFor(model => model.ModelName)
+
+    @Html.LabelFor(model => model.ModelNumber)
+    @Html.TextBoxFor(model => model.ModelNumber)
+
+    @Html.LabelFor(model => model.MaintenanceStatus)
+    @Html.TextBoxFor(model => model.MaintenanceStatus)
+
+    <input type="submit" value="Save"/>
+  }
+</div>
+
