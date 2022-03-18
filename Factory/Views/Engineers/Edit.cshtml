@@ -1,0 +1,32 @@
+@{
+  Layout = "_Layout";
+}
+
+@model Factory.Models.Engineer
+
+<h2>Edit Engineer</h2>
+
+<div class="margin">
+  @using (Html.BeginForm())
+  {
+    @Html.HiddenFor(model => model.EngineerId)
+
+    @Html.LabelFor(model => model.FullName)
+    @Html.TextBoxFor(model => model.FullName)
+
+    @Html.LabelFor(model => model.FirstName)
+    @Html.TextBoxFor(model => model.FirstName)
+
+    @Html.LabelFor(model => model.LastName)
+    @Html.TextBoxFor(model => model.LastName)
+
+    @Html.LabelFor(model => model.EngineerType)
+    @Html.TextBoxFor(model => model.EngineerType)
+
+    @Html.Label("Select Machines")
+    @Html.DropDownList("MachineId")
+
+    <input type="submit" value="save" />
+  }
+</div>
+
