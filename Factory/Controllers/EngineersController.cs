@@ -68,7 +68,7 @@ namespace Factory.Controllers
     {
       Engineer thisEngineer = _db.Engineers.FirstOrDefault(engineer => engineer.EngineerId == id);
       ViewBag.MachineId = new SelectList(_db.Machines, "MachineId", "ModelName");
-      return RedirectToAction("Index");
+      return View(thisEngineer);
     }
 
     [HttpPost]
